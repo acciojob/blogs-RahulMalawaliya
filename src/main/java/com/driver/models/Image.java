@@ -28,18 +28,6 @@ public class Image
 	@JoinColumn
 	private Blog blog;
 
-	public String getDiscription() {
-		return Description;
-	}
-
-	public void setDescription(String discription) {
-		Description = discription;
-	}
-
-	public String getDimentions() {
-		return Dimensions;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -48,19 +36,20 @@ public class Image
 		this.id = id;
 	}
 
-	public void setDimentions(String dimentions) {
-		Dimensions = dimentions;
+	public String getDescription() {
+		return Description;
 	}
 
-	public Image(String discription, String dimentions) {
-		super();
-		Description = discription;
-		Dimensions = dimentions;
+	public void setDescription(String description) {
+		Description = description;
 	}
 
-	public Image() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getDimensions() {
+		return Dimensions;
+	}
+
+	public void setDimensions(String dimensions) {
+		Dimensions = dimensions;
 	}
 
 	public Blog getBlog() {
@@ -70,6 +59,20 @@ public class Image
 	public void setBlog(Blog blog) {
 		this.blog = blog;
 	}
+
+	public Image(int id, String description, String dimensions, Blog blog) {
+		super();
+		this.id = id;
+		Description = description;
+		Dimensions = dimensions;
+		this.blog = blog;
+	}
+
+	public Image() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	
 	
 	
