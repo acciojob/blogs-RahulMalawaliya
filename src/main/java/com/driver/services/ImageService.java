@@ -21,10 +21,10 @@ public class ImageService {
         //create an image based on given parameters and add it to the imageList of given blog
     	Image image=new Image();
     	image.setDimentions(dimensions);
-    	image.setDiscription(description);
-    	List<Image> images=blog.getImages();
+    	image.setDescription(description);
+    	List<Image> images=blog.getImageList();
     	images.add(image);
-    	blog.setImages(images);
+    	blog.setImageList(images);
     	return image;
     }
 

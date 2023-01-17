@@ -26,13 +26,17 @@ public class User
 		this.id = id;
 	}
 
-	public List<Blog> getBlogs() {
-		return blogs;
+	
+
+	public List<Blog> getBlogList() {
+		return BlogList;
 	}
 
-	public void setBlogs(List<Blog> blogs) {
-		this.blogs = blogs;
+	public void setBlogList(List<Blog> blogList) {
+		BlogList = blogList;
 	}
+
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,7 +51,7 @@ public class User
 	private String LastName;
 	
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-	private List<Blog> blogs;
+	private List<Blog> BlogList;
 
 	public String getUsername() {
 		return Username;

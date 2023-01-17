@@ -39,12 +39,12 @@ public class BlogService {
     	Blog blog=new Blog();
     	blog.setTitle(title);
     	blog.setContent(content);
-    	blog.setPublish_Date(new Date());
+    	blog.setPubDate(new Date());
     	
     	User user=userRepository1.findById(userId).get();
-    	List<Blog> blogs=user.getBlogs();
+    	List<Blog> blogs=user.getBlogList();
     	blogs.add(blog);
-    	user.setBlogs(blogs);
+    	user.setBlogList(blogs);
     	userRepository1.save(user);
     	
 
@@ -60,11 +60,11 @@ public class BlogService {
         //add an image to the blog after creating it
     	Image image=new Image();
     	image.setDimentions(dimensions);
-    	image.setDiscription(description);
+    	image.setDescription(description);
     	Blog blog=blogRepository1.findById(blogId).get();
-    	List<Image> images=blog.getImages();
+    	List<Image> images=blog.getImageList();
     	images.add(image);
-    	blog.setImages(images);
+    	blog.setImageList(images);
     	blogRepository1.save(blog);
     }
 

@@ -20,39 +20,55 @@ public class Image
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private String Discription;
+	private String Description;
 	
-	private String Dimentions;
+	private String Dimensions;
 	
 	@ManyToOne
 	@JoinColumn
 	private Blog blog;
 
 	public String getDiscription() {
-		return Discription;
+		return Description;
 	}
 
-	public void setDiscription(String discription) {
-		Discription = discription;
+	public void setDescription(String discription) {
+		Description = discription;
 	}
 
 	public String getDimentions() {
-		return Dimentions;
+		return Dimensions;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public void setDimentions(String dimentions) {
-		Dimentions = dimentions;
+		Dimensions = dimentions;
 	}
 
 	public Image(String discription, String dimentions) {
 		super();
-		Discription = discription;
-		Dimentions = dimentions;
+		Description = discription;
+		Dimensions = dimentions;
 	}
 
 	public Image() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Blog getBlog() {
+		return blog;
+	}
+
+	public void setBlog(Blog blog) {
+		this.blog = blog;
 	}
 	
 	
